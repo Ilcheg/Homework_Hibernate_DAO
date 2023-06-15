@@ -1,21 +1,21 @@
 package ru.netology.homework_hibernate_dao.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Entity
+@IdClass(Person.class)
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "Persons")
-public class Person {
+public class Person implements Serializable {
 
     @Id
     @Column(nullable = false)
