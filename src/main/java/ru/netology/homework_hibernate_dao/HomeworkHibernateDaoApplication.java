@@ -3,10 +3,14 @@ package ru.netology.homework_hibernate_dao;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import ru.netology.homework_hibernate_dao.entity.Person;
+import ru.netology.homework_hibernate_dao.repository.PersonRepository;
+
+import java.util.List;
 
 @SpringBootApplication
 public class HomeworkHibernateDaoApplication implements CommandLineRunner {
@@ -16,11 +20,13 @@ public class HomeworkHibernateDaoApplication implements CommandLineRunner {
 
     public static void main(String[] args) {
         SpringApplication.run(HomeworkHibernateDaoApplication.class, args);
+
     }
 
     @Transactional
     @Override
     public void run(String... args) throws Exception {
+
         //Ниже сохранение данных в таблицу для проверки кода
 //        Person person1 = Person.builder()
 //                .name("Sergei")
