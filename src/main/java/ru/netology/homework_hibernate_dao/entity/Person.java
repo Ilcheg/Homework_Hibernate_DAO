@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 
 @Entity
-@IdClass(Person.class)
+@IdClass(PersonId.class)
 @Data
 @Builder
 @AllArgsConstructor
